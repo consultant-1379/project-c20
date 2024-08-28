@@ -1,0 +1,20 @@
+version: '3'
+services:
+  backend:
+    build: Matrix-Backend
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: ./React-MatrixFrontend/react-matrix-frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+
+
+  database:
+    build: h2Database
+    ports:
+      - "3030:3030"

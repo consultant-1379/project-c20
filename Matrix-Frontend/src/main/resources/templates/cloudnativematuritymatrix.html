@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Cloud Native Maturity Matrix</title>
+    <link th:href="@{/styles/css/main.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/actions.js}"></script>
+    <script th:inline="javascript">
+
+        /*<![CDATA[*/
+                
+        console.log(/*[[${matrix}]]*/)
+
+        /*]]>*/
+
+
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <h1>Cloud Native Maturity Matrix</h1>
+
+    <div class="matrixTableContainer">
+
+        <table class="matrixTable">
+            <thead>
+    
+                <tr>
+                    <th>Stage</th>
+                    <th>NO PROCESS</th>
+                    <th>WATERFALL</th>
+                    <th>AGILE</th>
+                    <th>CLOUD NATIVE</th>
+                    <th>NEXT</th>
+                </tr>
+    
+            </thead>
+    
+            <br>
+        
+            <tbody>
+    
+                <tr th:each="item, stat: *{matrix.rows}">
+    
+                    <td class="stageText" th:text="${item.stage}"></td>
+                    <td class="" th:classappend="${stat.index == item.} ? activeCell : nonActiveCell" th:each="item, stat : *{matrix.rows[__${stat.index}__].getRowStringList()}" th:text="${item}"></td>
+    
+            
+                </tr>
+    
+            </tbody>
+    
+    
+        </table>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Question Set</title>
+    <link th:href="@{/styles/css/main.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script type="text/javascript" th:src="@{/js/actions.js}"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body class="container">
+    <h1>Cloud Native Maturity Assessment</h1>
+    <form id="questionset-form" action="#" th:action="@{/cloudnativematuritymatrix}" th:object="${questionset}" method="POST">
+        <div class="questionSetContainer">
+            <ul>
+                <li th:each="item, stat : *{sections}">
+                    <div class="sectionContainer" th:id="${'section-'+stat.index}">
+                        <div th:id="${'topLevelQuestionContainer-'+stat.index}" class="topLevelQuestionContainer questionContainer">
+                            <label th:for="${'topLevelQuestion-'+stat.index}">Top Level Question</label>
+                            <p th:text="*{sections[__${stat.index}__].topLevelQuestion.qItem.questionText}"></p>
+                            <div class="topLevelQuestionRadioButtonContainer">
+                                <div class="yes-button-container button">
+                                    <input th:onclick="|scrollToNextQuestion('section-' + ${stat.index + 1})|" type="radio" th:field="*{sections[__${stat.index}__].topLevelQuestion.qItem.answer}" value="1">Yes
+                                </div>
+                                <div class="no-button-container button">
+                                    <input th:onclick="|showInstead('lowLevelQuestionContainer-' + ${stat.index}, 'topLevelQuestionContainer-' + ${stat.index})|" type="radio" th:field="*{sections[__${stat.index}__].topLevelQuestion.qItem.answer}" value="0"> No
+                                </div>
+                            </div>
+                        </div>
+                        <div th:id="${'lowLevelQuestionContainer-'+stat.index}" class="lowLevelQuestionsContainer questionContainer">
+                            <label th:for="${'lowLevelQuestion-'+stat.index}">Low Level Question</label>
+                            <ol>
+                                <li th:each="item, stat : *{sections[__${stat.index}__].lowLevelQuestion.qItems}">
+                                    <div class="singleLowLevelQuestionContainer form-check-inline">
+                                        <div class="lowLevelQuestionTextContainer">
+                                            <p th:text="*{sections[__${stat.index}__].lowLevelQuestion.qItems[__${stat.index}__].questionText}"></p>
+                                        </div>
+                                        <div class="lowLEvelQuestionCheckboxContainer">
+                                            <input type="checkbox" th:field="*{sections[__${stat.index}__].lowLevelQuestion.qItems[__${stat.index}__].answer}" id="${'lowLevelQuestionCheckbox-'+stat.index}">
+                                        </div>
+                                    </div>
+                            </li>
+                        </ol>
+                        <diV class="">
+                            <button class="button" type="button" th:onclick="|showInstead('topLevelQuestionContainer-' + ${stat.index}, 'lowLevelQuestionContainer-' + ${stat.index})|">Back to top level question</button>
+                            <button class="button" type="button" th:onclick="|scrollToNextQuestion('section-' + ${stat.index + 1})|">Next question</button>
+                        </diV>
+                    </div>
+                </div>
+                </li>
+            </ul>
+        </div>
+        <div class="submitButtonContainer">
+            <button class="submitButton" type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

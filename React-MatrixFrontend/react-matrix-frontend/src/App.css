@@ -1,0 +1,238 @@
+.App {
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h5 {
+    font-weight: 900;
+}
+
+.tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border: none;
+}
+
+tr {
+    border: none;
+    border-left: none;
+    border-right: none;
+    border-color: gray;
+    border-width: 1px;
+    background-image: linear-gradient(
+        to right,
+        #333 40%,
+        rgba(255, 255, 255, 0) 20%
+    );
+    background-position: bottom;
+    background-size: 5px 1px;
+    background-repeat: repeat-x;
+}
+
+.activeTableCell {
+    background-color: rgb(128, 255, 212, 0.6) !important;
+}
+
+.nonActiveTableCell {
+    background-color: rgb(205, 92, 92, 0.6) !important;
+}
+
+.homePageContainer {
+    margin-top: 35%;
+}
+.lowLevelQuestionContainer {
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 4px;
+    padding: 1%;
+}
+
+.selectedLowLevelQuestionContainer {
+    border-radius: 5px;
+    border: 2px solid rgb(33, 55, 224);
+    margin: 4px;
+    padding: 1%;
+}
+
+.lowLevelQuestionContainer:hover {
+    background-color: rgb(144, 188, 255);
+    border-color: rgb(33, 55, 224);
+}
+
+.nodisplay {
+    display: none;
+}
+
+input[type='checkbox'] + label {
+    font-weight: normal;
+}
+input[type='checkbox']:checked + label {
+    font-weight: bold;
+    color: rgb(33, 55, 224);
+    border: rgb(33, 55, 224);
+}
+
+.topLevelQuestionYesButton {
+    background-color: rgb(33, 55, 224) !important;
+    border-color: rgb(33, 55, 224) !important;
+    margin-right: 2%;
+    width: 5rem;
+    font-weight: 600 !important;
+}
+
+.topLevelQuestionNoButton {
+    background-color: #cc313d !important;
+    border-color: #cc313d !important;
+    width: 5rem;
+    font-weight: 600 !important;
+}
+
+.topLevelQuestionYesButton:hover {
+    background-color: rgb(24, 111, 241) !important;
+    border-color: rgb(24, 111, 241) !important;
+}
+
+.topLevelQuestionNoButton:hover {
+    background-color: #b85042 !important;
+    border-color: #b85042 !important;
+}
+
+.yesNoButtonsContainer {
+}
+
+.submitButtonBlockContainer {
+    display: flex;
+    justify-content: end;
+    margin-right: 10%;
+}
+
+.submitButtonContainer {
+    display: inline-block;
+    margin-right: 2%;
+
+}
+
+.submitInfoContainer {
+    margin-top: 2rem;
+}
+
+
+.submitButtom {
+    width: 13rem;
+    height: 5rem;
+    font-size: xx-large;
+    background-color: rgb(33, 55, 224);
+    border-color: rgb(33, 55, 224);
+    margin-bottom: 10%;
+}
+
+.submitButtom:hover {
+    background-color: rgb(24, 111, 241);
+    border-bottom: rgb(24, 111, 241);
+}
+
+.startBlockContainer {
+    display: inline;
+}
+
+.StartButtonContainer {
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.startInfoContainer {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.timeInfoContainer {
+    margin-top: 2%;
+}
+
+.titleContainer {
+    margin-bottom: 2%;
+}
+.startButton {
+    width: 100px;
+    height: 60px;
+    border-radius: 7% !important;
+    font-size: x-large !important;
+    font-weight: 700 !important;
+    padding: 8px 18px !important;
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(33, 55, 224) !important;
+}
+
+.startButton:hover {
+    background-color: rgb(24, 111, 241) !important;
+    border-color: rgb(24, 111, 241) !important;
+}
+
+.SectionContainer {
+    display: block;
+    text-align: left !important;
+    justify-content: left;
+    margin: 10%;
+    margin-bottom: 40%;
+}
+
+.questionForm {
+    margin-top: 30%;
+}
+
+.questionTextContainer {
+    margin-bottom: 3%;
+}
+.sectionInfoContainer {
+    display: inline;
+}
+
+.sectionNumberContainer {
+    display: inline-block;
+    margin-right: 2%;
+    color: rgb(33, 55, 224);
+}
+
+.sectionStageContainer {
+    display: inline-block;
+}
+
+.lowLevelQuestionNumberContainer {
+    display: inline-block;
+}
+
+.lowLevelQuestionAnswerItemContainer {
+    display: inline-block;
+}
+
+
+.backtoTopLevelQuestionButton {
+    background-color: #cc313d;
+    border-color: #cc313d;
+    margin-left: 1rem;
+}
+
+.lowLevelNextQuestionButton {
+    background-color: rgb(33, 55, 224);
+    border-color: rgb(33, 55, 224);
+}
+
+.lowLevelNextQuestionButton:hover {
+    background-color: rgb(24, 111, 241);
+    border-color: rgb(24, 111, 241);
+}
+
+.backtoTopLevelQuestionButton:hover {
+    background-color: #b85042;
+    border-color: #b85042;
+}
